@@ -3,15 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interrogate - Boilerplate</title>
+    <title>Interrogate - Vertical Slice</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <main class="app">
-      <h1>Interrogate Boilerplate</h1>
-      <p id="status" class="status">Loading...</p>
-      <button id="pingButton" type="button">Ping UI</button>
+      <header class="header">
+        <h1>Interrogate Vertical Slice</h1>
+        <p id="status" class="status">Loading...</p>
+      </header>
+
+      <section class="statement-panel" aria-live="polite">
+        <p id="statementText" class="statement-text">Awaiting statement...</p>
+        <p id="statementTimer" class="meta">Timer: 0.0s</p>
+      </section>
+
+      <section class="meters" aria-label="Case Meters">
+        <p id="trustValue" class="meta">Trust: 0%</p>
+        <p id="progressValue" class="meta">Evidence: 0 / 0</p>
+      </section>
+
+      <p id="outcomeBanner" class="outcome-banner" aria-live="assertive"></p>
+      <p id="endStateMessage" class="end-state" aria-live="polite"></p>
+
+      <div class="controls">
+        <button id="pingButton" type="button">Simulate Turn</button>
+        <button id="restartButton" type="button" disabled>Restart Case</button>
+      </div>
     </main>
-    <script src="./app.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

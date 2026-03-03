@@ -8,39 +8,98 @@ body {
   padding: 0;
   min-height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #121417;
-  color: #f2f4f8;
+  background:
+    radial-gradient(1200px 800px at 20% 20%, #1d2530 0%, transparent 60%),
+    linear-gradient(180deg, #0d1116 0%, #161c24 100%);
+  color: #edf1f7;
 }
 
 .app {
   min-height: 100vh;
+  max-width: 760px;
+  margin: 0 auto;
   display: grid;
-  place-content: center;
-  gap: 0.75rem;
-  text-align: center;
+  align-content: center;
+  gap: 1rem;
   padding: 1.5rem;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
 }
 
 .status {
   margin: 0;
-  opacity: 0.9;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.statement-panel,
+.meters {
+  border: 1px solid #354154;
+  border-radius: 0.75rem;
+  background: rgb(13 18 24 / 85%);
+  padding: 1rem;
+}
+
+.statement-text {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.meta {
+  margin: 0.2rem 0;
+  color: #d6dce7;
+  font-size: 0.95rem;
+}
+
+.outcome-banner,
+.end-state {
+  margin: 0;
+  min-height: 1.3rem;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  text-align: center;
+}
+
+.outcome-banner {
+  color: #fef4d8;
+  background: rgb(166 92 0 / 20%);
+  border: 1px solid rgb(226 153 63 / 40%);
+}
+
+.end-state {
+  color: #cbd7ea;
+  background: rgb(31 41 54 / 55%);
+  border: 1px solid rgb(72 86 104 / 45%);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
 }
 
 button {
-  justify-self: center;
-  border: 1px solid #374151;
-  background: #1f2937;
-  color: #f9fafb;
-  padding: 0.6rem 1rem;
+  border: 1px solid #4a5b73;
+  background: #213045;
+  color: #f8fbff;
+  padding: 0.65rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 button:hover {
-  background: #374151;
+  background: #2e415a;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

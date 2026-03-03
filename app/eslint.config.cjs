@@ -9,7 +9,7 @@ module.exports = [
   {
     files: ["public/**/*.js", "src/**/*.js"],
     languageOptions: {
-      sourceType: "script",
+      sourceType: "module",
       globals: {
         ...globals.browser
       }

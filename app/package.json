@@ -9,14 +9,20 @@
     "lint:html": "html-validate \"public/**/*.html\"",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "prepare": "node scripts/install-git-hooks.js"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^3.0.8",
     "@eslint/js": "^9.22.0",
     "eslint": "^9.22.0",
     "globals": "^15.15.0",
     "html-validate": "^9.3.0",
+    "jsdom": "^26.0.0",
     "stylelint": "^16.15.0",
-    "stylelint-config-standard": "^37.0.0"
+    "stylelint-config-standard": "^37.0.0",
+    "vitest": "^3.0.8"
   }
 }

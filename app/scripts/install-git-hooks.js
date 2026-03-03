@@ -18,14 +18,18 @@ function getRepoRoot() {
 
 function installPreCommitHook(repoRoot) {
   const hooksDir = path.join(repoRoot, ".git", "hooks");
-  const hookPath = path.join(hooksDir, "pre-commit");
-  const hookScript = "#!/usr/bin/env sh\ncd app && npm run lint\n";
+  const preCommitPath = path.join(hooksDir, "pre-commit");
+  const prePushPath = path.join(hooksDir, "pre-push");
+  const preCommitScript = "#!/usr/bin/env sh\ncd app && npm run lint\n";
+  const prePushScript = "#!/usr/bin/env sh\ncd app && npm test\n";
 
   fs.mkdirSync(hooksDir, { recursive: true });
-  fs.writeFileSync(hookPath, hookScript, "utf8");
+  fs.writeFileSync(preCommitPath, preCommitScript, "utf8");
+  fs.writeFileSync(prePushPath, prePushScript, "utf8");
 
   try {
-    fs.chmodSync(hookPath, 0o755);
+    fs.chmodSync(preCommitPath, 0o755);
+    fs.chmodSync(prePushPath, 0o755);
   } catch {
     // chmod may not be meaningful on some Windows setups.
   }
@@ -40,3 +44,4 @@ if (!repoRoot) {
 
 installPreCommitHook(repoRoot);
 console.log("[hooks] Installed pre-commit hook: cd app && npm run lint");
+console.log("[hooks] Installed pre-push hook: cd app && npm test");

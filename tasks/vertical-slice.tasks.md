@@ -11,7 +11,7 @@
 
 ### VS-001 Implement Game State Enum
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: `GameState` enum/constants with `PRE_CASE`, `CASE_BRIEF`, `STATEMENT_ACTIVE`, `RESOLUTION`, `CASE_SUCCESS`, `CASE_FAILURE`, `PAUSED`.
 - Scope boundary: constants only; no transition logic.
 - Test: unit test verifies all expected state keys exist and are immutable.
@@ -19,7 +19,7 @@
 
 ### VS-002 Implement Countdown Timer Module
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: timer module with start, stop, pause, resume, reset, and expiry callback.
 - Scope boundary: timer behavior only; no game-state decision logic.
 - Test: unit tests for decrement, pause/resume correctness, single expiry emission, and clamp at zero.
@@ -27,7 +27,7 @@
 
 ### VS-003 Implement Instruction Generator
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: instruction/statement provider that returns current statement text and truth flag from seeded/static case data.
 - Scope boundary: content retrieval only; no scoring or trust mutation.
 - Test: unit tests verify deterministic statement order for a fixed seed/data set.
@@ -35,7 +35,7 @@
 
 ### VS-004 Implement Input Handler
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: input module handling `ACCUSE`, timeout-as-`NO_INPUT`, and pause/resume signals.
 - Scope boundary: capture and normalize input events only; no outcome evaluation.
 - Test: unit tests for one-action-per-turn lock and ignored inputs in disallowed states.
@@ -43,7 +43,7 @@
 
 ### VS-005 Implement Evaluation Logic
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: pure evaluator that maps `(player_action, statement_truth)` to outcome (`correct accusation`, `correct restraint`, `false accusation`, `missed lie`).
 - Scope boundary: outcome resolution only; no scoring math, no UI.
 - Test: table-driven unit tests cover all outcome matrix combinations.
@@ -51,7 +51,7 @@
 
 ### VS-006 Implement Scoring System
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: scoring module for outcome points, time bonus, streak multiplier, and running total.
 - Scope boundary: score math only; no failure or state transition handling.
 - Test: unit tests for boundary values, streak thresholds, and non-negative final clamp.
@@ -59,7 +59,7 @@
 
 ### VS-007 Implement Failure State Rules
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: failure checker for `trust <= 0` and case-timeout-with-insufficient-evidence.
 - Scope boundary: failure decision only; no restart/reset flow.
 - Test: unit tests for both fail paths and no-fail controls.
@@ -67,7 +67,7 @@
 
 ### VS-008 Implement Restart Flow
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: reset routine that returns runtime to `CASE_BRIEF` with clean trust/progress/timers/turn index.
 - Scope boundary: reset orchestration only; no scoring or UI animation effects.
 - Test: integration test verifies a failed run can restart and begin a fresh case.
@@ -75,7 +75,7 @@
 
 ### VS-009 Add Basic UI Feedback
 
-- Status: `Todo`
+- Status: `Done`
 - Deliverable: minimal DOM feedback for statement text, timer, outcome message, trust/progress values, and end-state message.
 - Scope boundary: baseline readability only; no high-fidelity animation/polish.
 - Test: manual smoke test and basic DOM assertion test for each core outcome message path.
